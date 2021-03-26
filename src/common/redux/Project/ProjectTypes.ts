@@ -1,0 +1,5 @@
+export enum ProjectTypes {
+    PROJECT = 'PROJECT',
+    PROJECT_SUCCESS = 'PROJECT_SUCCESS',
+    PROJECT_FAILURE = 'PROJECT_FAILURE'
+}
