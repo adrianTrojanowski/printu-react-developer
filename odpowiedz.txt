@@ -1,0 +1,19 @@
+9. Proszę zaproponować (bez potrzeby implementacji) jakie uwagi powinny zostać zgłoszone do autora API oraz jakie testy powinny być napisane dla tej aplikacji.
+
+Odpowiedź:
+Według mnie zapyanie pod adres '/init' w obecnej postaci jest w tym momencie nadmiarowe i powinno zostać zastąpione przez zapytanie np. '/project', które zwróci losowe zadanie o strukturze torzsamej ze strukturą zapytania '/project/{id}' przez co w przypadku braku podania identyfikatora nie będzie potrzebne podwójne odwołanie do api.
+
+Jeśli chcemy jednak zostać przy zapytaniu init to właściwości 'name' oraz 'modified' są nadmiarowe ponieważ nazwa projektu i tak jest pobierana z danych pochodzących, z zapytania '/project/{id}', a właściwość modified nie jest używana.
+
+W kontekście zapytania 'project/{id}' nadmiarowy jest pierwszy identyfikator i zagnieżdżenie obiektu 'project'. Lepszym rozwiązaniem byłoby zwrócenie od razu obiektu 'project', w którym znajdują się wszystkie niezbędne informacje.
+
+Zapytanie o projekt z id: cklziyda30000m19k92zfao28-9430719080200028 według dokumentacji ma zwracać błąd 404, a zwraca błąd 500
+
+Dane zwracane z serwera nie powinny być błędne?
+
+Testy:
+W skład testów wchodzących w aplikację powinny wchodzić następujące:
+- testy sprawdzające poprawność dziłania metod zawarych klasach,
+- testy sprawdzające poprawność działania reducerów oraz akcji rduxowych,
+- testy sprawdzające poprawność wyrenderowania się odpowienich elementów w komponentach,
+- testy dla pojedynczych funckji
